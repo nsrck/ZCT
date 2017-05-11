@@ -9,6 +9,7 @@ data_st_def data_st;
 PARKNODE_def parknode[8191];
 pPARKNODE_def parknode_heap[8192];
 int parkcount;
+
 int main()
 {
     int pathlen;
@@ -20,14 +21,7 @@ int main()
     coord_t coord[STACKDEPTH];
     readdata();
 
-//    map_check(&data_st,parknode,&parkcount);
-//
-//    heapgene(parknode_heap,parknode,&parkcount);
-//
 //    pathfind(&startloc,&endloc,coord,&pathlen);
-
-
-
 
 
 

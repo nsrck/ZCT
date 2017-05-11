@@ -6,10 +6,10 @@
 	"readdata.h"
 	"mapcheck.h"
 
-1494496571 f:\codes\route\route\readdata.h
+1494497447 f:\codes\route\route\readdata.h
 	<stdio.h>
 	<stdlib.h>
-	"astar.h"
+	"main.h"
 
 1494496621 source:f:\codes\route\route\readdata.c
 	"readdata.h"
@@ -17,18 +17,17 @@
 1494495841 source:f:\codes\route\route\astar.c
 	"astar.h"
 
-1494496571 f:\codes\route\route\astar.h
+1494497428 f:\codes\route\route\astar.h
 	<stdio.h>
 	<stdlib.h>
-	"readdata.h"
+	"main.h"
 
-1494496375 f:\codes\route\route\mapcheck.h
+1494497478 f:\codes\route\route\mapcheck.h
 	<stdio.h>
 	<stdlib.h>
-	"astar.h"
-	"readdata.h"
+	"main.h"
 
-1494496005 f:\codes\route\route\main.h
+1494497403 f:\codes\route\route\main.h
 
 1494495755 source:f:\codes\route\route\mapcheck.c
 	"mapcheck.h"
