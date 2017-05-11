@@ -41,6 +41,7 @@ typedef struct PARKNODE_s
     coord_t E_Path[256];
 
 }PARKNODE_def;
+typedef PARKNODE_def *pPARKNODE_def;
 /*
 返回值是1说明寻到路径，返回值是0说明没有；
 路径长度就是coord路径堆栈的堆栈深度。例如：两个路径点pathlen就是2。
