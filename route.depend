@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1494042988 source:f:\codes\route\route\main.c
+	<stdio.h>
+	<stdlib.h>
+	"readdata.h"
+	"astar.h"
+
+1493890798 f:\codes\route\route\readdata.h
+	<stdio.h>
+	<stdlib.h>
+	"astar.h"
+
+1494044094 source:f:\codes\route\route\readdata.c
+	"readdata.h"
+
+1493977752 source:f:\codes\route\route\astar.c
+	"astar.h"
+
+1493975246 f:\codes\route\route\astar.h
+	<stdio.h>
+	<stdlib.h>
+	"readdata.h"
+
