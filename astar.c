@@ -194,7 +194,7 @@ void adjust_heap( int i )
     int rc = 2 * i + 2;   //ÓÒº¢×Ó½ÚµãĞòºÅ
     int min = i;
 
-    if( i < open_node_count / 2 )
+    if( i < open_node_count/2  )
     {
         if( lc < open_node_count && open_table[lc]->s_g + open_table[lc]->s_h > open_table[min]->s_g + open_table[min]->s_h )
         {
