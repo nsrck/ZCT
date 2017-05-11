@@ -3,6 +3,7 @@
 #include "astar.h"
 #include "readdata.h"
 #include "mapcheck.h"
+#include "main.h"
 
 
 data_st_def data_st;
