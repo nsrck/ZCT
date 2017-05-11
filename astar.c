@@ -7,6 +7,13 @@
     int		   close_node_count=0;		// close表中结点数量
     AStarNode **pmapnode;
 
+ //private
+static void adjust_heap( int i );
+static void filter_up(int start);
+static void _swap( int idx1, int idx2 );
+static void insert_to_opentable( int x, int y, pAStarNode curr_node, pAStarNode end_node, int w );
+static void get_neighbors( pAStarNode curr_node, pAStarNode end_node );
+
 int pathfind(coord_t *S,coord_t *E,coord_t coord[],int *pathlen)
 {
 

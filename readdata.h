@@ -31,11 +31,10 @@ typedef struct
     car_property car[4095];
 }data_st_def;
 
-
-
-extern  data_st_def data_st;
-void readdata(data_st_def * data_st);
+extern data_st_def data_st;
+//
+//void readdata(data_st_def * data_st);
 //private
-
+void readdata(void);
 
 #endif // READDATA_H_INCLUDED

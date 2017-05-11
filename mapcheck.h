@@ -6,6 +6,9 @@
 #include "astar.h"
 #include "readdata.h"
 
+
 int map_check(data_st_def * data_st,PARKNODE_def *parknode,int *pnodecount);//nodecount 是总共有多少停车位的数量
 int heapgene(pPARKNODE_def parknode_heap[],PARKNODE_def parknode[],int *pnodecount);
+void filter_dw( int start );
+void filter_up( int start );
 #endif

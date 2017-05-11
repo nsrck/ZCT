@@ -2,7 +2,8 @@
 
 char prmap[]="PBIEX";
 
-void readdata(data_st_def * data_st)
+//void readdata(data_st_def * data_st)
+void readdata(void)
 {
     int k,p,a,b,w,h,i,j,carnum;
     int tmp;
@@ -35,19 +36,19 @@ void readdata(data_st_def * data_st)
             switch(tmp)
             {
             case 'P':
-                data_st->pmap[i][j]=P;
+                data_st.pmap[i][j]=P;
                 break;
             case 'B':
-                data_st->pmap[i][j]=B;
+                data_st.pmap[i][j]=B;
                 break;
             case 'I':
-                data_st->pmap[i][j]=I;
+                data_st.pmap[i][j]=I;
                 break;
             case 'E':
-                data_st->pmap[i][j]=E;
+                data_st.pmap[i][j]=E;
                 break;
             case 'X':
-                data_st->pmap[i][j]=X;
+                data_st.pmap[i][j]=X;
                 break;
 
             }
@@ -63,7 +64,7 @@ void readdata(data_st_def * data_st)
 
         for(j=0; j<w; j++)
         {
-            switch(data_st->pmap[i][j])
+            switch(data_st.pmap[i][j])
             {
             case P:
                 printf("%c ",prmap[0]);
@@ -93,8 +94,8 @@ void readdata(data_st_def * data_st)
 
     for(i=0; i<carnum; i++)
     {
-        fscanf(pFile,"%d %d %d %d %d",&data_st->car[i].ID,&data_st->car[i].T_in,&data_st->car[i].T_out,&data_st->car[i].T_Mwait,&data_st->car[i].mass);
-        printf("%d %d %d %d %d\r\n",data_st->car[i].ID,data_st->car[i].T_in,data_st->car[i].T_out,data_st->car[i].T_Mwait,data_st->car[i].mass);
+        fscanf(pFile,"%d %d %d %d %d",&data_st.car[i].ID,&data_st.car[i].T_in,&data_st.car[i].T_out,&data_st.car[i].T_Mwait,&data_st.car[i].mass);
+        printf("%d %d %d %d %d\r\n",data_st.car[i].ID,data_st.car[i].T_in,data_st.car[i].T_out,data_st.car[i].T_Mwait,data_st.car[i].mass);
 
     }
 
@@ -102,13 +103,13 @@ void readdata(data_st_def * data_st)
     fclose(pFile); // ¹Ø±ÕÎÄ¼ş
     free(pBuf);
 
-    data_st->a=a;
-    data_st->b=b;
-    data_st->k=k;
-    data_st->p=p;
-    data_st->carnum=carnum;
-    data_st->h=h;
-    data_st->w=w;
+    data_st.a=a;
+    data_st.b=b;
+    data_st.k=k;
+    data_st.p=p;
+    data_st.carnum=carnum;
+    data_st.h=h;
+    data_st.w=w;
 
 
 }

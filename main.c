@@ -18,11 +18,13 @@ int main()
     endloc.x=5;
     endloc.y=0;
     coord_t coord[STACKDEPTH];
-    readdata(&data_st);
-    map_check(&data_st,parknode,&parkcount);
+    readdata();
 
-    heapgene(parknode_heap,parknode,&parkcount);
-    pathfind(&startloc,&endloc,coord,&pathlen);
+//    map_check(&data_st,parknode,&parkcount);
+//
+//    heapgene(parknode_heap,parknode,&parkcount);
+//
+//    pathfind(&startloc,&endloc,coord,&pathlen);
 
 
 
