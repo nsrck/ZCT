@@ -26,8 +26,9 @@ typedef struct
     int w;
     int h;
     int carnum;
-    mapsta **pmap;
-    car_property *car;
+//    mapsta **pmap;
+    mapsta pmap[100][100];
+    car_property car[4095];
 }data_st_def;
 
 

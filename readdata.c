@@ -5,8 +5,6 @@ char prmap[]="PBIEX";
 void readdata(data_st_def * data_st)
 {
     int k,p,a,b,w,h,i,j,carnum;
-    mapsta **pmap;
-    car_property *car;
     int tmp;
     FILE *pFile=fopen(".//data//4.txt","r"); //获取文件的指针
     char *pBuf;  //定义文件buff
@@ -20,9 +18,10 @@ void readdata(data_st_def * data_st)
     fscanf(pFile,"%d %d",&h,&w);
     printf("h=%d w=%d \r\n",h,w);  //显示读到的数据
 
-    pmap=(mapsta **)malloc(sizeof(mapsta *)*h);//构建地图数组
-    pmap[0]=(mapsta *)malloc(w*h*sizeof(mapsta));
-    for(i=1;i<h;i++)pmap[i]=pmap[0]+i*w;
+
+//    pmap=(mapsta **)malloc(sizeof(mapsta *)*h);//构建地图数组
+//    pmap[0]=(mapsta *)malloc(w*h*sizeof(mapsta));
+//    for(i=1;i<h;i++)pmap[i]=pmap[0]+i*w;
     fgets(pBuf,128,pFile);
 
 
@@ -36,19 +35,19 @@ void readdata(data_st_def * data_st)
             switch(tmp)
             {
             case 'P':
-                pmap[i][j]=P;
+                data_st->pmap[i][j]=P;
                 break;
             case 'B':
-                pmap[i][j]=B;
+                data_st->pmap[i][j]=B;
                 break;
             case 'I':
-                pmap[i][j]=I;
+                data_st->pmap[i][j]=I;
                 break;
             case 'E':
-                pmap[i][j]=E;
+                data_st->pmap[i][j]=E;
                 break;
             case 'X':
-                pmap[i][j]=X;
+                data_st->pmap[i][j]=X;
                 break;
 
             }
@@ -64,7 +63,7 @@ void readdata(data_st_def * data_st)
 
         for(j=0; j<w; j++)
         {
-            switch(pmap[i][j])
+            switch(data_st->pmap[i][j])
             {
             case P:
                 printf("%c ",prmap[0]);
@@ -91,12 +90,11 @@ void readdata(data_st_def * data_st)
 
     fscanf(pFile,"%d",&carnum);
     printf("carnum=%d\r\n",carnum);  //显示读到的数据
-    car=(car_property *)malloc(sizeof(car_property)*carnum);
 
     for(i=0; i<carnum; i++)
     {
-        fscanf(pFile,"%d %d %d %d %d",&car[i].ID,&car[i].T_in,&car[i].T_out,&car[i].T_Mwait,&car[i].mass);
-        printf("%d %d %d %d %d\r\n",car[i].ID,car[i].T_in,car[i].T_out,car[i].T_Mwait,car[i].mass);
+        fscanf(pFile,"%d %d %d %d %d",&data_st->car[i].ID,&data_st->car[i].T_in,&data_st->car[i].T_out,&data_st->car[i].T_Mwait,&data_st->car[i].mass);
+        printf("%d %d %d %d %d\r\n",data_st->car[i].ID,data_st->car[i].T_in,data_st->car[i].T_out,data_st->car[i].T_Mwait,data_st->car[i].mass);
 
     }
 
@@ -111,8 +109,7 @@ void readdata(data_st_def * data_st)
     data_st->carnum=carnum;
     data_st->h=h;
     data_st->w=w;
-    data_st->pmap=pmap;
-    data_st->car=car;
+
 
 }
 

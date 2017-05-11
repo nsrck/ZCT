@@ -7,7 +7,7 @@
     int		   close_node_count=0;		// close表中结点数量
     AStarNode **pmapnode;
 
-int pathfind(coord_t *S,coord_t *E,coord_t coord[])
+int pathfind(coord_t *S,coord_t *E,coord_t coord[],int *pathlen)
 {
 
     pAStarNode path_stack[STACKDEPTH];			// 保存路径的栈
@@ -125,6 +125,7 @@ int pathfind(coord_t *S,coord_t *E,coord_t coord[])
                 coord[i].x=path_stack[top]->s_x;
                 coord[i].y=path_stack[top]->s_y;
                 i++;
+                *pathlen=i;
                 top--;
                 coord[i].x=32767;
                 coord[i].y=32767;

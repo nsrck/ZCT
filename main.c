@@ -1,29 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "readdata.h"
 #include "astar.h"
-/*
-
-data_st_def
-{
-    int k;
-    int p;
-    int a;
-    int b;
-    int w;
-    int h;
-    int carnum;
-    mapsta **pmap;
-    AStarNode **pmapnode;//节点数组
-    car_property *car;
-};
-*/
+#include "readdata.h"
+#include "mapcheck.h"
 
 
 data_st_def data_st;
-
+PARKNODE_def parknode[8191];
 int main()
 {
+    int pathlen;
     coord_t startloc,endloc;
     startloc.x=0;
     startloc.y=5;
@@ -31,7 +17,7 @@ int main()
     endloc.y=0;
     coord_t coord[STACKDEPTH];
     readdata(&data_st);
-//    pathfind(&startloc,&endloc,coord);
+    pathfind(&startloc,&endloc,coord,&pathlen);
 
 
 
@@ -39,8 +25,7 @@ int main()
 
 
 
-    free(data_st.car);
-    free(data_st.pmap);
+
 
 
     return 0;

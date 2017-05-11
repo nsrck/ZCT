@@ -31,7 +31,21 @@ typedef struct coord_s
     int y;
 }coord_t;
 
-int pathfind(coord_t *S,coord_t *E,coord_t coord[]);
+typedef struct PARKNODE_s
+{
+    coord_t loc;
+    coord_t I_loc;
+    int I_len;
+    int E_len;
+    coord_t I_Path[256];
+    coord_t E_Path[256];
+
+}PARKNODE_def;
+/*
+返回值是1说明寻到路径，返回值是0说明没有；
+路径长度就是coord路径堆栈的堆栈深度。例如：两个路径点pathlen就是2。
+*/
+int pathfind(coord_t *S,coord_t *E,coord_t coord[],int *pathlen);
 
 //private
 void adjust_heap( int i );
