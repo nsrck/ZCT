@@ -9,6 +9,8 @@
 data_st_def data_st;
 PARKNODE_def parknode[8191];
 pPARKNODE_def parknode_heap[8192];
+coord_t entrance_loc;
+coord_t exit_loc;
 int parkcount;
 
 int main()
