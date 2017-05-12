@@ -64,9 +64,7 @@ typedef struct population_s
 {
     coord_t Car_parkpos[CARMAX];
     int robo_sche[ROBOMAX][2*CARMAX];
-}population_def
-
-
+}population_def;
 extern data_st_def data_st;
 extern PARKNODE_def parknode[8191];
 extern pPARKNODE_def parknode_heap[8192];//用来实现二叉堆的数组
@@ -75,10 +73,6 @@ extern coord_t entrance_loc;
 extern coord_t exit_loc;
 
 extern population_def population[POPUNUM];
-
-
-extern coord_t Car_parkpos[CARMAX];
-extern int robo_sche[ROBOMAX][2*CARMAX];
 
 
 #endif
