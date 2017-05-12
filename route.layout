@@ -2,19 +2,19 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="astar.c" open="1" top="0" tabpos="4">
-		<Cursor position="4925" topLine="141" />
+		<Cursor position="3973" topLine="20" />
 	</File>
 	<File name="astar.h" open="1" top="0" tabpos="6">
 		<Cursor position="517" topLine="2" />
 	</File>
 	<File name="main.c" open="1" top="0" tabpos="1">
-		<Cursor position="413" topLine="12" />
+		<Cursor position="413" topLine="0" />
 	</File>
-	<File name="main.h" open="1" top="0" tabpos="5">
-		<Cursor position="1191" topLine="41" />
+	<File name="main.h" open="1" top="1" tabpos="5">
+		<Cursor position="1122" topLine="49" />
 	</File>
-	<File name="mapcheck.c" open="1" top="1" tabpos="2">
-		<Cursor position="8144" topLine="0" />
+	<File name="mapcheck.c" open="1" top="0" tabpos="2">
+		<Cursor position="7960" topLine="94" />
 	</File>
 	<File name="mapcheck.h" open="1" top="0" tabpos="3">
 		<Cursor position="140" topLine="0" />

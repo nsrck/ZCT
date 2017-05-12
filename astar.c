@@ -5,7 +5,8 @@
 
     int		   open_node_count=0;			// open表中节点数量
     int		   close_node_count=0;		// close表中结点数量
-    AStarNode **pmapnode;
+//    AStarNode **pmapnode;
+    AStarNode pmapnode[100][100];
 
  //private
 static void adjust_heap( int i );
@@ -26,9 +27,9 @@ int pathfind(coord_t *S,coord_t *E,coord_t coord[],int *pathlen)
     int i,j;
 
 
-    pmapnode=(AStarNode **)malloc(sizeof(AStarNode *)*data_st.h);//构建地图数组
-    pmapnode[0]=(AStarNode *)malloc(data_st.w*data_st.h*sizeof(AStarNode));
-    for(i=1;i<data_st.h;i++)pmapnode[i]=pmapnode[0]+i*data_st.w;
+//    pmapnode=(AStarNode **)malloc(sizeof(AStarNode *)*data_st.h);//构建地图数组
+//    pmapnode[0]=(AStarNode *)malloc(data_st.w*data_st.h*sizeof(AStarNode));
+//    for(i=1;i<data_st.h;i++)pmapnode[i]=pmapnode[0]+i*data_st.w;
 
     for( i = 0; i < data_st.h; ++i )
 	{
@@ -74,7 +75,7 @@ int pathfind(coord_t *S,coord_t *E,coord_t coord[],int *pathlen)
 
     if ( start_node->s_x == end_node->s_x && start_node->s_y == end_node->s_y )
     {
-        printf("起点==终点！\n");
+ //       printf("起点==终点！\n");
         return 0;
     }
 
@@ -123,12 +124,16 @@ int pathfind(coord_t *S,coord_t *E,coord_t coord[],int *pathlen)
                 coord[i].y=path_stack[top]->s_y;
                 i++;
 
-                //printf("(%d,%d)-->", path_stack[top]->s_x, path_stack[top]->s_y);
+
+//                printf("(%d,%d)-->", path_stack[top]->s_x, path_stack[top]->s_y);
+
                 top--;
             }
             else
             {
-                //printf("(%d,%d)", path_stack[top]->s_x, path_stack[top]->s_y);
+
+//                printf("(%d,%d)", path_stack[top]->s_x, path_stack[top]->s_y);
+
                 coord[i].x=path_stack[top]->s_x;
                 coord[i].y=path_stack[top]->s_y;
                 i++;
@@ -143,20 +148,22 @@ int pathfind(coord_t *S,coord_t *E,coord_t coord[],int *pathlen)
 //        memset(close_table,0,sizeof(pAStarNode)*LISTLENGTH);
         open_node_count=0;
         close_node_count=0;
-        free(pmapnode[0]);
-        free(pmapnode);
+//        free(pmapnode[0]);
+//        free(pmapnode);
         return 1;
     }
     else
     {
-        printf("么有找到路径");
+//        printf("么有找到路径");
 //        memset(open_table,0,sizeof(pAStarNode)*LISTLENGTH);
 //        memset(close_table,0,sizeof(pAStarNode)*LISTLENGTH);
         open_node_count=0;
         close_node_count=0;
-        free(pmapnode[0]);
-        free(pmapnode);
-        abort_map();
+
+//        free(pmapnode[0]);
+//        free(pmapnode);
+        return 0;
+
     }
 
 
