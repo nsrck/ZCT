@@ -27,6 +27,8 @@ int main()
     endloc.y=0;
     coord_t coord[STACKDEPTH];
     readdata();
+    map_check();
+
 
     for(i=0;i<100;i++)
     {
@@ -38,6 +40,6 @@ int main()
 
 
 
-    return 0;
+    return 1;
 }
 
