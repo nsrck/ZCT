@@ -3,6 +3,7 @@
 
 #define CARMAX 5000
 #define ROBOMAX 100
+#define POPUNUM 100 //初始种群数量
 
 typedef    struct
 {
@@ -59,6 +60,11 @@ typedef struct PARKNODE_s
 }PARKNODE_def;
 typedef PARKNODE_def *pPARKNODE_def;
 
+typedef struct population_s
+{
+    coord_t Car_parkpos[CARMAX];
+    int robo_sche[ROBOMAX][2*CARMAX];
+}population_def;
 extern data_st_def data_st;
 extern PARKNODE_def parknode[8191];
 extern pPARKNODE_def parknode_heap[8192];//用来实现二叉堆的数组
@@ -66,7 +72,7 @@ extern int parkcount;//nodecount 是总共有多少停车位的数量
 extern coord_t entrance_loc;
 extern coord_t exit_loc;
 
-extern coord_t Car_parkpos[CARMAX];
-extern int robo_sche[ROBOMAX][2*CARMAX];
+extern population_def population[POPUNUM];
+
 
 #endif
