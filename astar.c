@@ -123,12 +123,12 @@ int pathfind(coord_t *S,coord_t *E,coord_t coord[],int *pathlen)
                 coord[i].y=path_stack[top]->s_y;
                 i++;
 
-                printf("(%d,%d)-->", path_stack[top]->s_x, path_stack[top]->s_y);
+                //printf("(%d,%d)-->", path_stack[top]->s_x, path_stack[top]->s_y);
                 top--;
             }
             else
             {
-                printf("(%d,%d)", path_stack[top]->s_x, path_stack[top]->s_y);
+                //printf("(%d,%d)", path_stack[top]->s_x, path_stack[top]->s_y);
                 coord[i].x=path_stack[top]->s_x;
                 coord[i].y=path_stack[top]->s_y;
                 i++;
@@ -156,7 +156,7 @@ int pathfind(coord_t *S,coord_t *E,coord_t coord[],int *pathlen)
         close_node_count=0;
         free(pmapnode[0]);
         free(pmapnode);
-        return 0;
+        abort_map();
     }
 
 

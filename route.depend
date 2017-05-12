@@ -34,3 +34,38 @@
 1494495755 source:f:\codes\route\route\mapcheck.c
 	"mapcheck.h"
 
+1494580088 source:e:\bt\zct\mapcheck.c
+	"mapcheck.h"
+
+1494577608 e:\bt\zct\mapcheck.h
+	<stdio.h>
+	<stdlib.h>
+	"main.h"
+	"astar.h"
+
+1494560035 e:\bt\zct\main.h
+
+1494558448 e:\bt\zct\astar.h
+	<stdio.h>
+	<stdlib.h>
+	"main.h"
+
+1494580342 source:e:\bt\zct\readdata.c
+	"readdata.h"
+
+1494558448 e:\bt\zct\readdata.h
+	<stdio.h>
+	<stdlib.h>
+	"main.h"
+
+1494577990 source:e:\bt\zct\astar.c
+	"astar.h"
+
+1494577138 source:e:\bt\zct\main.c
+	<stdio.h>
+	<stdlib.h>
+	"astar.h"
+	"readdata.h"
+	"mapcheck.h"
+	"main.h"
+

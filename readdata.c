@@ -7,7 +7,7 @@ void readdata(void)
 {
     int k,p,a,b,w,h,i,j,carnum;
     int tmp;
-    FILE *pFile=fopen(".//data//4.txt","r"); //获取文件的指针
+    FILE *pFile=fopen(".//data//2.txt","r"); //获取文件的指针
     char *pBuf;  //定义文件buff
 
     pBuf=(char *)malloc(128);

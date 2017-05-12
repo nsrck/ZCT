@@ -23,6 +23,8 @@ int main()
     endloc.y=0;
     coord_t coord[STACKDEPTH];
     readdata();
+    map_check();
+
 
 //    pathfind(&startloc,&endloc,coord,&pathlen);
 
@@ -32,6 +34,6 @@ int main()
 
 
 
-    return 0;
+    return 1;
 }
 
