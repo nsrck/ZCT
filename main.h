@@ -1,6 +1,9 @@
 #ifndef MAIN_H_INCLUDED
 #define MAIN_H_INCLUDED
 
+#define CARMAX 5000
+#define ROBOMAX 100
+
 typedef    struct
 {
     int ID;
@@ -60,4 +63,8 @@ extern data_st_def data_st;
 extern PARKNODE_def parknode[8191];
 extern pPARKNODE_def parknode_heap[8192];//用来实现二叉堆的数组
 extern int parkcount;//nodecount 是总共有多少停车位的数量
+extern coord_t entrance_loc;
+extern coord_t exit_loc;
+extern coord_t Car_parkpos[CARMAX];
+extern int robo_sche[ROBOMAX][2*CARMAX];
 #endif
