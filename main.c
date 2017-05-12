@@ -26,18 +26,21 @@ int main()
     endloc.x=5;
     endloc.y=0;
     coord_t coord[STACKDEPTH];
-    readdata();//读取地图数据
-    genepopu();//生成初始种群
-//    for(i=0;i<100;i++)
-//    {
-//        pathfind(&startloc,&endloc,coord,&pathlen);
-//    }
+
+    readdata();
+    map_check();
+
+
+    for(i=0;i<100;i++)
+    {
+        pathfind(&startloc,&endloc,coord,&pathlen);
+    }
 
 
 
 
 
 
-    return 0;
+    return 1;
 }
 

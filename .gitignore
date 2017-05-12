@@ -50,3 +50,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+obj/Debug/astar.o
+obj/Debug/astar.o
+*.o
+bin/Debug/route.exe
