@@ -4,6 +4,7 @@
 #include "readdata.h"
 #include "mapcheck.h"
 #include "main.h"
+#include "gene.h"
 
 
 data_st_def data_st;
@@ -11,8 +12,7 @@ PARKNODE_def parknode[8191];//停车位信息
 pPARKNODE_def parknode_heap[8192];//停车位的二叉堆
 coord_t entrance_loc;//入口坐标
 coord_t exit_loc;//出口坐标
-coord_t Car_parkpos[CARMAX];//车位分配表
-int robo_sche[ROBOMAX][2*CARMAX];//机器人调度表
+population_def population[POPUNUM];//初始种群
 
 
 int parkcount;//车位数量
@@ -26,6 +26,7 @@ int main()
     endloc.x=5;
     endloc.y=0;
     coord_t coord[STACKDEPTH];
+
     readdata();
     map_check();
 
