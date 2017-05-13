@@ -64,15 +64,17 @@ typedef struct population_s
 {
     coord_t Car_parkpos[CARMAX];
     int robo_sche[ROBOMAX][2*CARMAX];
-}population_def;
+}population_def;//个体包含了一个车位表和调度表
 extern data_st_def data_st;
 extern PARKNODE_def parknode[8191];
 extern pPARKNODE_def parknode_heap[8192];//用来实现二叉堆的数组
 extern int parkcount;//nodecount 是总共有多少停车位的数量
 extern coord_t entrance_loc;
 extern coord_t exit_loc;
-
 extern population_def population[POPUNUM];
-
+extern int robocnt=3;//机器人的数量
+extern int Tout_p[CARMAX];//出车位时间表
+extern int Tin_p[CARMAX];//入车位时间表
+extern int ent_sort[CARMAX*2];//申请时间的顺序表：1是入库，0是出库。对前n个数据求和得到m，就能知道是第m个入库事件或是n-m+1个出库事件
 
 #endif

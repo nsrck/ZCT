@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1494571228 source:f:\codes\route\route\main.c
+1494590630 source:f:\codes\route\route\main.c
 	<stdio.h>
 	<stdlib.h>
 	"astar.h"
 	"readdata.h"
 	"mapcheck.h"
 	"main.h"
+	"gene.h"
 
 1494498450 f:\codes\route\route\readdata.h
 	<stdio.h>
@@ -29,7 +30,7 @@
 	"main.h"
 	"astar.h"
 
-1494590360 f:\codes\route\route\main.h
+1494590630 f:\codes\route\route\main.h
 
 1494589826 source:f:\codes\route\route\mapcheck.c
 	"mapcheck.h"
@@ -68,4 +69,9 @@
 	"readdata.h"
 	"mapcheck.h"
 	"main.h"
+
+1494590630 f:\codes\route\route\gene.h
+	"main.h"
+	<stdio.h>
+	<stdlib.h>
 
