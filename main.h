@@ -70,7 +70,7 @@ typedef struct sortst_s
 typedef struct population_s
 {
     int Car_parkpos[CARMAX];//值代表了在车位表线性表中的索引
-    int robo_sche[ROBOMAX][2*CARMAX];
+    int robo_sche[2*CARMAX];//每个元素的值代表了选择第几个机器人，从0号开始。等于robocnt就说明放弃这个事件了。
 }population_def;//个体包含了一个车位表和调度表
 
 extern data_st_def data_st;
@@ -84,6 +84,8 @@ extern population_def population[POPUNUM];
 extern int robocnt;//机器人的数量
 extern int Tout_p[CARMAX];//出车位时间表
 extern int Tin_p[CARMAX];//入车位时间表
+extern int T1[CARMAX];//等待时间
+extern int T2[CARMAX];//等待时间
 extern int ent_sort[CARMAX*2];//申请时间的顺序表：+1是第一辆车出库事件，-1是第一辆车出库事件
 
 #endif
