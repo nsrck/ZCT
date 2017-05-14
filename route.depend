@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1494590630 source:f:\codes\route\route\main.c
+1494742138 source:f:\codes\route\route\main.c
 	<stdio.h>
 	<stdlib.h>
 	"astar.h"
@@ -13,7 +13,7 @@
 	<stdlib.h>
 	"main.h"
 
-1494589826 source:f:\codes\route\route\readdata.c
+1494744040 source:f:\codes\route\route\readdata.c
 	"readdata.h"
 
 1494589826 source:f:\codes\route\route\astar.c
@@ -30,7 +30,7 @@
 	"main.h"
 	"astar.h"
 
-1494590630 f:\codes\route\route\main.h
+1494742171 f:\codes\route\route\main.h
 
 1494589826 source:f:\codes\route\route\mapcheck.c
 	"mapcheck.h"
@@ -74,4 +74,6 @@
 	"main.h"
 	<stdio.h>
 	<stdlib.h>
+
+1494742148 source:f:\codes\route\route\temp.c
 

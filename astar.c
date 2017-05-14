@@ -15,7 +15,7 @@ static void _swap( int idx1, int idx2 );
 static void insert_to_opentable( int x, int y, pAStarNode curr_node, pAStarNode end_node, int w );
 static void get_neighbors( pAStarNode curr_node, pAStarNode end_node );
 
-int pathfind(coord_t *S,coord_t *E,coord_t coord[],int *pathlen)
+int pathfind(coord_t *S,coord_t *E,coord_t coord[],int *pathlen)//1：有路径 0：无路径
 {
 
     pAStarNode path_stack[STACKDEPTH];			// 保存路径的栈
