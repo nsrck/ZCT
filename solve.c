@@ -10,7 +10,9 @@ robosta_def robosta[ROBOMAX];
 void updatesta_in(int *sche,int *parkpos,int entnum,robosta_def* robosta);
 void updatesta_out(int *sche,int *parkpos,int entnum,robosta_def* robosta);
 
-int solveNout(int n);
+int solveNout(int *sche,int *parkpos,int n);
+int isconflict(void);
+int solveconflict(void);
 
 void solvepos(population_def *solu)
 {
@@ -28,7 +30,7 @@ void solvepos(population_def *solu)
 
     for(i=0;i<data_st.carnum;i++)
     {
-        solveNout(i+1);
+        solveNout(sche,parkpos,i+1);
     }
 
 
@@ -37,18 +39,18 @@ void solvepos(population_def *solu)
 
 }
 
-int solveNout(int n)
+int solveNout(int *sche,int *parkpos,int n)
 {
-    int i=0,k=0;
+    int i=1,k=0,j;
 
-    for(i=0; i<robocnt; i++)
+    for(j=0; j<robocnt; j++)
     {
-        robosta[i].robopos=entrance_loc;//所有机器人初始都在入口位置
-        robosta[i].index=-1;
-        robosta[i].Time=0;
+        robosta[j].robopos=entrance_loc;//所有机器人初始都在入口位置
+        robosta[j].index=-1;
+        robosta[j].Time=0;
     }
 
-    while(ent_sort[i]!=-n)//
+    while(ent_sort[i-1]!=-n)//
     {
 
 
@@ -60,12 +62,20 @@ int solveNout(int n)
 
         updatesta_out(sche,parkpos,i,robosta);//解决出库时间，得到出车位时间
         i++;
-        if()//监测冲突
+        if(isconflict())//监测冲突
         {
             //存在冲突
-            k=solveconflict()；//k是冲突点最近的一个出库事件，solveconflict重新安排了冲突车位
-            solveNout(k);
-            i=findk(k);
+            k=solveconflict();//k是冲突点最近的一个出库事件，solveconflict重新安排了冲突车位，注意k是车id号
+            for(j=0; j<2*data_st.carnum; j++)
+            {
+                if(ent_sort[j]==-k)
+                {
+                    i=j+1;
+                    break;
+                }
+            }
+
+            solveNout(sche,parkpos,k);
         }
         else
         {
@@ -74,13 +84,15 @@ int solveNout(int n)
         }
     }
 }
-
-void initsolu(population_def *solu)
+int isconflict(void)
 {
 
 }
+int solveconflict(void)
+{
 
-int GetTpout(int n)
+}
+void initsolu(population_def *solu)
 {
 
 }
@@ -88,7 +100,7 @@ int GetTpout(int n)
 void updatesta_out(int *sche,int *parkpos,int entnum,robosta_def* robosta)
 {
     int i,j,rososel=-1,temp,robosel;
-    int n=-ent_sort[i]-1;
+    int n=-ent_sort[entnum]-1;
     coord_t path_temp[STACKDEPTH];
     int pathlen_temp;
 
@@ -169,7 +181,7 @@ void updatesta_in(int *sche,int *parkpos,int entnum,robosta_def* robosta)
     if(robosel>=0)//是否为放弃车辆？
     {
         //不是放弃车辆
-        if(robosta[robosel].index==-1))//机器人在不在入口位置
+        if(robosta[robosel].index==-1)//机器人在不在入口位置
         {
             //如果机器人在入口位置
             robosta[robosel].robopos=parknode_list[parkpos[n]]->loc;
