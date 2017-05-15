@@ -45,7 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-
+temp.c
 *.exe
 *.o
 Debug\

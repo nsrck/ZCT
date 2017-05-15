@@ -20,7 +20,7 @@ int Tout_p[CARMAX];//出车位时间表
 int Tin_p[CARMAX];//入车位时间表
 int T1[CARMAX];//等待时间
 int T2[CARMAX];//等待时间
-int ent_sort[CARMAX*2];//申请时间的顺序表：1是入库，0是出库。对前n个数据求和得到m，就能知道是第m个入库事件或是n-m+1个出库事件
+int ent_sort[CARMAX*2];//申请时间的顺序表：
 int parkcount;//车位数量
 
 
