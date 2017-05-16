@@ -19,6 +19,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="assignpath.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="assignpath.h" />
 		<Unit filename="astar.c">
 			<Option compilerVar="CC" />
 		</Unit>
