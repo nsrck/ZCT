@@ -6,19 +6,23 @@ typedef struct robosta_st
     int index;//停车位坐标对应的在顺序表中的位置，-1是入口，-2是出口
 } robosta_def;
 robosta_def robosta[ROBOMAX];
+int *sche;
+int *parkpos;
 
-void updatesta_in(int *sche,int *parkpos,int entnum,robosta_def* robosta);
-void updatesta_out(int *sche,int *parkpos,int entnum,robosta_def* robosta);
+void updatesta_in(int entnum);
+void updatesta_out(int entnum);
 
-int solveNout(int *sche,int *parkpos,int n);
-int isconflict(void);
-int solveconflict(void);
+int getnewpos(int n);
+int solveNout(int n);
+int isconflict(int envnum);
+int solveconflict(int envnum);
 
 void solvepos(population_def *solu)
 {
     int i,j;
-    int *parkpos=solu->Car_parkpos;
-    int *sche=solu->robo_sche;//robo_sche[2*CARMAX];
+
+    parkpos=solu->Car_parkpos;
+    sche=solu->robo_sche;//robo_sche[2*CARMAX];
 
 
     for(i=0; i<robocnt; i++)
@@ -28,18 +32,13 @@ void solvepos(population_def *solu)
         robosta[i].Time=0;
     }
 
-    for(i=0;i<data_st.carnum;i++)
-    {
-        solveNout(sche,parkpos,i+1);
-    }
 
-
-
+        solveNout(data_st.carnum);
 
 
 }
 
-int solveNout(int *sche,int *parkpos,int n)
+int solveNout(int n)
 {
     int i=1,k=0,j;
 
@@ -56,26 +55,19 @@ int solveNout(int *sche,int *parkpos,int n)
 
         while(ent_sort[i]>0) //更新第出库前的入库事件产生的状态
         {
-            updatesta_in(sche,parkpos,i,robosta);//这里注意，ent_sort保存的是车子的id，所以会比索引大1
+            updatesta_in(i);//这里注意，ent_sort保存的是车子的id，所以会比索引大1
             i++;
         }
 
-        updatesta_out(sche,parkpos,i,robosta);//解决出库时间，得到出车位时间
+        updatesta_out(i);//解决出库时间，得到出车位时间
         i++;
-        if(isconflict(-ent_sort[i-1]-1))//监测冲突
+        if(isconflict(i-1))//监测冲突
         {
             //存在冲突
-            k=solveconflict();//k是冲突点最近的一个出库事件，solveconflict重新安排了冲突车位，注意k是车id号
-            for(j=0; j<2*data_st.carnum; j++)
-            {
-                if(ent_sort[j]==-k)
-                {
-                    i=j+1;
-                    break;
-                }
-            }
+            k=solveconflict(i-1);//k是冲突点最近的一个出库事件的索引，solveconflict重新安排了冲突车位
+            solveNout(-ent_sort[k]-1);//解决这个出库事件
 
-            solveNout(sche,parkpos,k);
+            i=k+1;
         }
         else
         {
@@ -84,25 +76,73 @@ int solveNout(int *sche,int *parkpos,int n)
         }
     }
 }
-int isconflict(int n)
+int isconflict(int envnum)
 {
     int i=0;
-//    for(i=0;;i++)
-//    {
-//        T1[i]Tout_p[n]
-//    }
+    int n=-ent_sort[envnum]-1;//第n辆车的出库事件
+    int m;
+
+    for(i=envnum;(ent_sort[i]<0&&i<2*data_st.carnum);i++);
+
+    if(i==2*data_st.carnum)
+    {
+        m=data_st.carnum;
+    }
+    else
+    {
+        m=ent_sort[i]-1;//m是出库事件之后的入库事件的车索引
+    }
+
+    for(i=n+1;i<m;i++)//查找n入库之后和m入库之前的，车的车位是否有冲突
+    {
+        if(parkpos[i]==parkpos[n]&&Tin_p[i]<Tout_p[n])
+        {
+            return 1;
+        }
+    }
+    return 0;
+
 
 }
-int solveconflict(void)
+int solveconflict(int envnum)
+{
+    int i,j;
+    int n=-ent_sort[envnum]-1;//第索引为n的车的出库事件
+    int m;
+    for(i=envnum;(ent_sort[i]<0&&i<2*data_st.carnum);i++);
+
+    if(i==2*data_st.carnum)
+    {
+        m=data_st.carnum;
+    }
+    else
+    {
+        m=ent_sort[i]-1;//m是出库事件之后的入库事件的车索引
+    }
+    for(i=n+1;i<m;i++)//查找n入库之后和m入库之前的，车的车位是否有冲突
+    {
+        if(parkpos[i]==parkpos[n]&&Tin_p[i]<Tout_p[n])
+        {
+             break;
+        }
+    }
+    parkpos[i]=getnewpos(i);//给冲突的i车重新分配车位(i是索引)
+
+    for(j=0;ent_sort[j]==i+1;j++);//确定i车的入库事件
+    for(i=j;ent_sort[i]<0;i++);//确定距离i车入库最近的出库事件
+    return i;//返回出库事件的索引
+
+}
+int getnewpos(int n)//在车位冲突过程中解决车位重新分配的问题
 {
 
 }
-void initsolu(population_def *solu)
+void initsolu(population_def *solu)//初始化一个个体
 {
 
 }
 
-void updatesta_out(int *sche,int *parkpos,int entnum,robosta_def* robosta)
+void updatesta_out(int entnum)
 {
     int i,j,rososel=-1,temp,robosel;
     int n=-ent_sort[entnum]-1;
@@ -164,7 +204,7 @@ void updatesta_out(int *sche,int *parkpos,int entnum,robosta_def* robosta)
             parkpos内容是parknode_list顺序表的索引
             entnum是第几次事件
 */
-void updatesta_in(int *sche,int *parkpos,int entnum,robosta_def* robosta)
+void updatesta_in(int entnum)
 {
     int min,robosel=0,temp,i,j,k=0;
     int n=ent_sort[entnum]-1;
@@ -256,7 +296,7 @@ void updatesta_in(int *sche,int *parkpos,int entnum,robosta_def* robosta)
                     sche[n+data_st.carnum]=-1;//出库调度表也要改正
                 }
 
-                updatesta_in(sche,parkpos,entnum,robosta);//重新来一下
+                updatesta_in(entnum);//重新来一下
 
                 //存在不超时的机器人
             }

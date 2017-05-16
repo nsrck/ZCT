@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1494814735 source:f:\codes\route\route\main.c
+1494903265 source:f:\codes\route\route\main.c
 	<stdio.h>
 	<stdlib.h>
 	"astar.h"
@@ -86,4 +86,13 @@
 
 1494847985 source:f:\codes\route\route\solve.c
 	"solve.h"
+
+1494904348 source:f:\codes\route\route\assignpath.c
+	"assignpath.h"
+
+1494904348 f:\codes\route\route\assignpath.h
+	<stdio.h>
+	<stdlib.h>
+	"main.h"
+	"astar.h"
 
