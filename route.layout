@@ -2,7 +2,7 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="assignpath.c" open="1" top="0" tabpos="13">
-		<Cursor position="287" topLine="19" />
+		<Cursor position="1094" topLine="19" />
 	</File>
 	<File name="astar.c" open="1" top="0" tabpos="5">
 		<Cursor position="0" topLine="0" />
@@ -11,10 +11,10 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="main.c" open="1" top="0" tabpos="2">
-		<Cursor position="924" topLine="7" />
+		<Cursor position="234" topLine="7" />
 	</File>
 	<File name="main.h" open="1" top="0" tabpos="6">
-		<Cursor position="453" topLine="68" />
+		<Cursor position="1393" topLine="62" />
 	</File>
 	<File name="mapcheck.c" open="1" top="0" tabpos="3">
 		<Cursor position="7882" topLine="0" />
@@ -29,13 +29,13 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="robocnt.c" open="1" top="1" tabpos="12">
-		<Cursor position="1419" topLine="30" />
+		<Cursor position="1242" topLine="30" />
 	</File>
 	<File name="robocnt.h" open="1" top="0" tabpos="11">
 		<Cursor position="159" topLine="0" />
 	</File>
 	<File name="solve.c" open="1" top="0" tabpos="1">
-		<Cursor position="8898" topLine="268" />
+		<Cursor position="7174" topLine="246" />
 	</File>
 	<File name="solve.h" open="1" top="0" tabpos="9">
 		<Cursor position="132" topLine="0" />
