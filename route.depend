@@ -36,23 +36,23 @@
 1494746177 source:f:\codes\route\route\mapcheck.c
 	"mapcheck.h"
 
-1494580088 source:e:\bt\zct\mapcheck.c
+1494903782 source:e:\bt\zct\mapcheck.c
 	"mapcheck.h"
 
-1494577608 e:\bt\zct\mapcheck.h
+1494658446 e:\bt\zct\mapcheck.h
 	<stdio.h>
 	<stdlib.h>
 	"main.h"
 	"astar.h"
 
-1494560035 e:\bt\zct\main.h
+1494903782 e:\bt\zct\main.h
 
 1494558448 e:\bt\zct\astar.h
 	<stdio.h>
 	<stdlib.h>
 	"main.h"
 
-1494580342 source:e:\bt\zct\readdata.c
+1494903782 source:e:\bt\zct\readdata.c
 	"readdata.h"
 
 1494558448 e:\bt\zct\readdata.h
@@ -60,16 +60,18 @@
 	<stdlib.h>
 	"main.h"
 
-1494577990 source:e:\bt\zct\astar.c
+1494903782 source:e:\bt\zct\astar.c
 	"astar.h"
 
-1494577138 source:e:\bt\zct\main.c
+1494903782 source:e:\bt\zct\main.c
 	<stdio.h>
 	<stdlib.h>
 	"astar.h"
 	"readdata.h"
 	"mapcheck.h"
 	"main.h"
+	"gene.h"
+	"solve.h"
 
 1494590630 f:\codes\route\route\gene.h
 	"main.h"
@@ -79,6 +81,17 @@
 1494742148 source:f:\codes\route\route\temp.c
 
 1494753613 f:\codes\route\route\solve.h
+	<stdio.h>
+	<stdlib.h>
+	"main.h"
+	"astar.h"
+
+1494903782 e:\bt\zct\gene.h
+	"main.h"
+	<stdio.h>
+	<stdlib.h>
+
+1494903782 e:\bt\zct\solve.h
 	<stdio.h>
 	<stdlib.h>
 	"main.h"

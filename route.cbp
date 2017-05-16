@@ -7,8 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/route" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Debug/" />
+				<Option output="bin\Debug\route" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="readdata.h" />
+		<Unit filename="robocnt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="robocnt.h" />
 		<Unit filename="solve.c">
 			<Option compilerVar="CC" />
 		</Unit>
