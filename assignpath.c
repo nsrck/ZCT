@@ -30,9 +30,11 @@
     int assign_range,end_result;
     float percent,assign_mass;          //车质量的重量级
     assign_mass = data_st.car[i].mass;
-    percent = (assign_mass-5)/35;
+  //  printf("%f",assign_mass);
+    percent = (assign_mass-4)/35;
     assign_range = parkcount*percent;
    end_result=rand()%assign_range;
+ //  printf("......");
    return end_result;                            //返回第几个parknode_list
  }
 
