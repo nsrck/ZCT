@@ -6,6 +6,7 @@
 #include "main.h"
 #include "gene.h"
 #include "solve.h"
+#include "robocnt.h"
 
 
 data_st_def data_st;

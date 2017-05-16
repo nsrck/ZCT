@@ -63,7 +63,7 @@
 1494903782 source:e:\bt\zct\astar.c
 	"astar.h"
 
-1494903782 source:e:\bt\zct\main.c
+1494931825 source:e:\bt\zct\main.c
 	<stdio.h>
 	<stdlib.h>
 	"astar.h"
@@ -72,6 +72,7 @@
 	"main.h"
 	"gene.h"
 	"solve.h"
+	"robocnt.h"
 
 1494590630 f:\codes\route\route\gene.h
 	"main.h"
@@ -92,6 +93,28 @@
 	<stdlib.h>
 
 1494903782 e:\bt\zct\solve.h
+	<stdio.h>
+	<stdlib.h>
+	"main.h"
+	"astar.h"
+
+1494922421 source:e:\bt\zct\robocnt.c
+	<math.h>
+	"robocnt.h"
+
+1494903782 e:\bt\zct\robocnt.h
+	<stdio.h>
+	<stdlib.h>
+	"main.h"
+	"astar.h"
+
+1494931550 source:e:\bt\zct\solve.c
+	"solve.h"
+
+1494931550 source:e:\bt\zct\assignpath.c
+	"assignpath.h"
+
+1494931550 e:\bt\zct\assignpath.h
 	<stdio.h>
 	<stdlib.h>
 	"main.h"
