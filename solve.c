@@ -62,7 +62,7 @@ int solveNout(int *sche,int *parkpos,int n)
 
         updatesta_out(sche,parkpos,i,robosta);//解决出库时间，得到出车位时间
         i++;
-        if(isconflict())//监测冲突
+        if(isconflict(-ent_sort[i-1]-1))//监测冲突
         {
             //存在冲突
             k=solveconflict();//k是冲突点最近的一个出库事件，solveconflict重新安排了冲突车位，注意k是车id号
@@ -84,8 +84,13 @@ int solveNout(int *sche,int *parkpos,int n)
         }
     }
 }
-int isconflict(void)
+int isconflict(int n)
 {
+    int i=0;
+//    for(i=0;;i++)
+//    {
+//        T1[i]Tout_p[n]
+//    }
 
 }
 int solveconflict(void)

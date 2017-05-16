@@ -40,9 +40,9 @@ int main()
 //    {
 //        abort_map();
 //    }
-    sortent();
-    initsolu(&(population[0]));
-    solvepos(&(population[0]));
+//    sortent();
+//    initsolu(&(population[0]));
+//    solvepos(&(population[0]));
 
 //
 //
