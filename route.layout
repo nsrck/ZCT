@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="assignpath.c" open="1" top="0" tabpos="13">
+	<File name="assignpath.c" open="1" top="0" tabpos="24">
 		<Cursor position="1094" topLine="19" />
 	</File>
-	<File name="astar.c" open="1" top="0" tabpos="5">
+	<File name="astar.c" open="1" top="0" tabpos="16">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="astar.h" open="1" top="0" tabpos="7">
+	<File name="astar.h" open="1" top="0" tabpos="18">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="main.c" open="1" top="0" tabpos="2">
+	<File name="main.c" open="1" top="0" tabpos="13">
 		<Cursor position="234" topLine="7" />
 	</File>
-	<File name="main.h" open="1" top="0" tabpos="6">
+	<File name="main.h" open="1" top="0" tabpos="17">
 		<Cursor position="1393" topLine="62" />
 	</File>
-	<File name="mapcheck.c" open="1" top="0" tabpos="3">
+	<File name="mapcheck.c" open="1" top="0" tabpos="14">
 		<Cursor position="7882" topLine="0" />
 	</File>
-	<File name="mapcheck.h" open="1" top="0" tabpos="4">
+	<File name="mapcheck.h" open="1" top="0" tabpos="15">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="readdata.c" open="1" top="0" tabpos="8">
+	<File name="readdata.c" open="1" top="0" tabpos="19">
 		<Cursor position="299" topLine="0" />
 	</File>
-	<File name="readdata.h" open="1" top="0" tabpos="10">
+	<File name="readdata.h" open="1" top="0" tabpos="21">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="robocnt.c" open="1" top="1" tabpos="12">
-		<Cursor position="1242" topLine="30" />
+	<File name="robocnt.c" open="1" top="1" tabpos="23">
+		<Cursor position="1358" topLine="30" />
 	</File>
-	<File name="robocnt.h" open="1" top="0" tabpos="11">
+	<File name="robocnt.h" open="1" top="0" tabpos="22">
 		<Cursor position="159" topLine="0" />
 	</File>
-	<File name="solve.c" open="1" top="0" tabpos="1">
+	<File name="solve.c" open="1" top="0" tabpos="12">
 		<Cursor position="7174" topLine="246" />
 	</File>
-	<File name="solve.h" open="1" top="0" tabpos="9">
+	<File name="solve.h" open="1" top="0" tabpos="20">
 		<Cursor position="132" topLine="0" />
 	</File>
 	<File name="temp.c" open="0" top="0" tabpos="8">

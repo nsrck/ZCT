@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include "main.h"
 #include "astar.h"
+#include "solve.h"
 
 int roboeval(void);
 

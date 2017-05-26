@@ -4,7 +4,7 @@
 #define CARMAX 5000
 #define ROBOMAX 100
 #define POPUNUM 100 //初始种群数量
-
+#define STACKDEPTH 10000
 typedef    struct
 {
     int ID;
@@ -80,6 +80,8 @@ extern pPARKNODE_def parknode_list[8192];//停车位的顺序表
 extern int parkcount;//nodecount 是总共有多少停车位的数量
 extern coord_t entrance_loc;
 extern coord_t exit_loc;
+extern int pathlen_StoE;
+extern coord_t path_StoE[STACKDEPTH];
 extern population_def population[POPUNUM];
 extern int robocnt;//机器人的数量
 extern int Tout_p[CARMAX];//出车位时间表
@@ -87,5 +89,8 @@ extern int Tin_p[CARMAX];//入车位时间表
 extern int T1[CARMAX];//等待时间
 extern int T2[CARMAX];//等待时间
 extern int ent_sort[CARMAX*2];//申请时间的顺序表：+1是第一辆车出库事件，-1是第一辆车出库事件
-
+extern int mapvalid;
+extern int Z;
+extern int T_count;
+extern int W_count;
 #endif
